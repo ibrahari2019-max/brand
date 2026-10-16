@@ -1,0 +1,1057 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="clon provides software development, technology clon, and student project support.">
+  <title>clon | Built for What's Next</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Animate.css: required for WOW.js animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    :root {
+      --navy: #101828;
+      --blue: #3B82F6;
+      --cloud: #F3F6FB;
+      --slate: #64748B;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      color: #172033;
+      line-height: 1.7;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Space Grotesk", sans-serif;
+      letter-spacing: -0.04em;
+    }
+
+    a { text-decoration: none; }
+
+    .section-anchor { scroll-margin-top: 80px; }
+
+    .site-navbar {
+      background: rgba(16, 24, 40, .96);
+      backdrop-filter: blur(12px);
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .brand-mark {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 19px;
+      font-weight: 700;
+    }
+
+    .brand-mark:hover { color: white; }
+
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--blue);
+      font-size: 23px;
+    }
+
+    .brand-dot, .footer-brand span { color: var(--blue); }
+
+    .brand-mark small {
+      display: block;
+      font-family: "Inter", sans-serif;
+      font-size: 8px;
+      letter-spacing: 2px;
+      color: #aab7cc;
+    }
+
+    .navbar .nav-link {
+      color: #c3cede;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px 13px !important;
+    }
+
+    .navbar .nav-link:hover,
+    .navbar .nav-link.active { color: white; }
+
+    .btn {
+      border-radius: 9px;
+      font-weight: 600;
+      transition: .25s ease;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      border-color: var(--blue);
+    }
+
+    .btn-primary:hover {
+      background: #2563eb;
+      border-color: #2563eb;
+      transform: translateY(-2px);
+    }
+
+    .hero-section {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      color: white;
+      background:
+        radial-gradient(ellipse at 80% 40%, #1b355d 0%, transparent 45%),
+        linear-gradient(120deg, #0b1220, #101828 65%, #101b30);
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      opacity: .12;
+      background-image:
+        linear-gradient(rgba(148,163,184,.25) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148,163,184,.25) 1px, transparent 1px);
+      background-size: 45px 45px;
+    }
+
+    .eyebrow, .section-kicker {
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow { color: #a8c7ff; }
+
+    .hero-title {
+      margin: 25px 0 20px;
+      font-size: clamp(3.5rem, 7vw, 6.4rem);
+      line-height: .98;
+      font-weight: 700;
+      letter-spacing: -.075em;
+    }
+
+    .text-gradient {
+      color: transparent;
+      background: linear-gradient(100deg, #60a5fa, #a5b4fc, #d8b4fe);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .hero-copy {
+      max-width: 570px;
+      color: #b8c4d7;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin-top: 42px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,.15);
+    }
+
+    .hero-proof strong, .hero-proof span { display: block; }
+    .hero-proof strong { font-size: 14px; }
+    .hero-proof span { color: #94a3b8; font-size: 10px; }
+
+    .hero-visual {
+      min-height: 440px;
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .visual-orbit {
+      position: absolute;
+      border: 1px solid rgba(147,197,253,.25);
+      border-radius: 50%;
+    }
+
+    .orbit-one {
+      width: 350px;
+      height: 250px;
+      transform: rotate(-25deg);
+    }
+
+    .orbit-two {
+      width: 260px;
+      height: 350px;
+      transform: rotate(35deg);
+      border-color: rgba(167,139,250,.25);
+    }
+
+    .visual-core {
+      z-index: 1;
+      width: 200px;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 1px solid rgba(147,197,253,.4);
+      background: radial-gradient(circle at 30% 25%, #263f68, #101828 75%);
+      box-shadow: 0 0 70px rgba(59,130,246,.25);
+      text-align: center;
+    }
+
+    .core-symbol {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .core-symbol span { color: var(--blue); }
+
+    .visual-core p {
+      margin-top: 10px;
+      color: #c3cede;
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    .floating-card {
+      z-index: 2;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 15px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 12px;
+      background: rgba(21,34,56,.94);
+      box-shadow: 0 12px 35px rgba(0,0,0,.2);
+    }
+
+    .float-card-one { top: 20%; left: 0; }
+    .float-card-two { bottom: 20%; right: 0; }
+
+    .mini-icon {
+      width: 35px;
+      height: 35px;
+      display: grid;
+      place-items: center;
+      border-radius: 9px;
+      color: #93c5fd;
+      background: rgba(59,130,246,.2);
+      font-size: 19px;
+    }
+
+    .floating-card b, .floating-card small { display: block; }
+    .floating-card b { font-size: 11px; }
+    .floating-card small { color: #aab7cc; font-size: 9px; }
+
+    .section-padding { padding: 100px 0; }
+    .bg-light-soft { background: var(--cloud); }
+
+    .section-heading { max-width: 700px; }
+    .section-heading h2, .section-title {
+      margin: 15px 0;
+      font-size: clamp(2.3rem, 4vw, 3.4rem);
+      line-height: 1.12;
+      font-weight: 700;
+    }
+
+    .section-heading p, .section-intro {
+      color: var(--slate);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    /* Service cards */
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 28px;
+      border: 1px solid #e7ecf4;
+      border-radius: 17px;
+      background: white;
+      transition: .25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      border-color: #c5d8fb;
+      box-shadow: 0 20px 45px rgba(16,24,40,.08);
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 25px;
+      border-radius: 14px;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .icon-blue { color: #2563eb; background: #eaf2ff; }
+    .icon-violet { color: #7c3aed; background: #f2eafe; }
+    .icon-orange { color: #c2410c; background: #fff0e7; }
+
+    .service-number {
+      color: #8b98ab;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+    }
+
+    .service-card h3 {
+      margin: 10px 0;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .service-card p {
+      color: var(--slate);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .service-list {
+      list-style: none;
+      margin: 8px 0 25px;
+      padding: 0;
+      color: #3d4a5f;
+      font-size: 11px;
+    }
+
+    .service-list li { margin: 9px 0; }
+    .service-list li::before {
+      content: "✓";
+      margin-right: 9px;
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .service-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 18px;
+      border-top: 1px solid #edf0f5;
+    }
+
+    .text-link {
+      color: #1d4ed8;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .whatsapp-mini {
+      width: 33px;
+      height: 33px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #e8f8ee;
+      color: #16834a;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .btn-dark-custom {
+      padding: 13px 20px;
+      color: white;
+      background: var(--navy);
+      font-size: 12px;
+    }
+
+    .btn-dark-custom:hover { color: white; background: #25344c; }
+
+    /* Portfolio */
+    .portfolio-card {
+      overflow: hidden;
+      height: 100%;
+      border: 1px solid #e9edf4;
+      border-radius: 17px;
+      background: white;
+    }
+
+    .portfolio-art {
+      height: 250px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portfolio-blue { background: #f3f7ff; }
+    .portfolio-purple { background: #f7f3ff; }
+
+    .mock-window {
+      width: 75%;
+      max-width: 390px;
+      height: 175px;
+      overflow: hidden;
+      border: 1px solid #dce4f0;
+      border-radius: 10px;
+      background: white;
+      box-shadow: 0 20px 40px rgba(43,79,140,.15);
+      transform: perspective(900px) rotateY(-8deg);
+    }
+
+    .mock-top {
+      height: 24px;
+      padding: 0 10px;
+      border-bottom: 1px solid #e8edf5;
+      background: #f9fafc;
+    }
+
+    .mock-top i {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      margin: 9px 2px;
+      border-radius: 50%;
+      background: #cbd5e1;
+    }
+
+    .mock-content { display: flex; height: calc(100% - 24px); }
+    .mock-side { width: 20%; background: #17243b; }
+    .mock-main { flex: 1; padding: 13px; }
+    .mock-main > span {
+      display: block;
+      width: 60%;
+      height: 6px;
+      margin-bottom: 8px;
+      border-radius: 4px;
+      background: #dce5f2;
+    }
+
+    .mock-chart {
+      height: 65px;
+      display: flex;
+      align-items: end;
+      gap: 7px;
+      padding: 8px 12px 0;
+      margin-top: 10px;
+      background: #f4f7fc;
+    }
+
+    .mock-chart b {
+      flex: 1;
+      border-radius: 3px 3px 0 0;
+      background: #60a5fa;
+    }
+
+    .mock-chart b:nth-child(1) { height: 35%; }
+    .mock-chart b:nth-child(2) { height: 58%; }
+    .mock-chart b:nth-child(3) { height: 45%; }
+    .mock-chart b:nth-child(4) { height: 82%; }
+    .mock-chart b:nth-child(5) { height: 65%; }
+    .mock-chart b:nth-child(6) { height: 100%; }
+
+    .project-sheet {
+      width: 190px;
+      height: 210px;
+      padding: 22px;
+      background: white;
+      border: 1px solid #e4ddf6;
+      box-shadow: 0 20px 40px rgba(100,64,160,.13);
+      transform: rotate(-5deg);
+    }
+
+    .sheet-mark { font: 700 26px "Space Grotesk"; margin-bottom: 16px; }
+    .sheet-mark span { color: var(--blue); }
+    .sheet-line { width: 70%; height: 5px; margin: 9px 0; border-radius: 4px; background: #e4e7ef; }
+    .sheet-line.long { width: 100%; }
+    .sheet-block { height: 60px; margin: 14px 0; border-radius: 5px; background: linear-gradient(135deg,#dbeafe,#ede9fe); }
+
+    .portfolio-info { padding: 23px 26px 27px; }
+    .portfolio-info > span { color: var(--slate); font-size: 9px; font-weight: 700; letter-spacing: 1.5px; }
+    .portfolio-info h3 { margin: 8px 0; font-size: 21px; }
+    .portfolio-info p, .portfolio-note { color: var(--slate); font-size: 12px; }
+
+    /* About */
+    .about-visual {
+      min-height: 420px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      background: radial-gradient(circle at 50% 50%, #1d3b69, #101828 70%);
+    }
+
+    .about-big-letter {
+      z-index: 1;
+      color: white;
+      font: 700 clamp(8rem, 20vw, 15rem)/1 "Space Grotesk";
+      letter-spacing: -.12em;
+      text-shadow: 0 15px 50px rgba(59,130,246,.3);
+    }
+
+    .about-big-letter span { color: var(--blue); }
+
+    .about-sticker {
+      z-index: 2;
+      position: absolute;
+      padding: 12px 15px;
+      border-radius: 9px;
+      color: #172033;
+      background: white;
+      box-shadow: 0 10px 25px rgba(0,0,0,.15);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .sticker-top { top: 18%; right: 8%; transform: rotate(5deg); }
+    .sticker-bottom { bottom: 18%; left: 8%; transform: rotate(-4deg); }
+    .about-sticker span { color: var(--blue); margin-right: 7px; }
+
+    .body-muted { color: #68778c; font-size: 12px; line-height: 1.9; }
+
+    .value-item { display: flex; gap: 12px; align-items: flex-start; }
+    .value-item > span { color: var(--blue); font-size: 10px; font-weight: 700; }
+    .value-item strong, .value-item small { display: block; }
+    .value-item strong { font-size: 11px; }
+    .value-item small { margin-top: 3px; color: #7b8799; font-size: 10px; }
+
+    /* Contact */
+    .contact-section { padding-top: 20px; background: var(--cloud); }
+
+    .contact-panel {
+      position: relative;
+      overflow: hidden;
+      padding: 60px;
+      border-radius: 22px;
+      color: white;
+      background: linear-gradient(115deg, #101828, #152a4b);
+    }
+
+    .kicker-light { color: #93c5fd; }
+
+    .contact-panel h2 {
+      margin: 17px 0;
+      font-size: clamp(2.4rem, 4.5vw, 4rem);
+      line-height: 1.08;
+      font-weight: 700;
+    }
+
+    .contact-panel h2 span { color: #93c5fd; }
+    .contact-panel p { max-width: 540px; color: #b9c6d8; font-size: 12px; line-height: 1.9; }
+    .contact-button { color: #172033; font-size: 12px; padding: 15px 18px; }
+    .contact-button:hover { color: #172033; transform: translateY(-2px); }
+
+    /* Footer */
+    .site-footer { padding: 40px 0 20px; color: #8f9cb0; background: #0b1220; }
+    .footer-brand { color: white; font: 700 20px "Space Grotesk"; }
+    .footer-brand:hover { color: white; }
+    .footer-tagline { color: #8492a7; font-size: 10px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 17px; }
+    .footer-links a, .footer-whatsapp { color: #a9b5c6; font-size: 10px; }
+    .footer-links a:hover, .footer-whatsapp:hover { color: white; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.09); color: #68768b; font-size: 9px; }
+
+    .back-to-top {
+      position: fixed;
+      z-index: 10;
+      right: 20px;
+      bottom: 20px;
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      color: white;
+      background: var(--blue);
+      box-shadow: 0 8px 22px rgba(59,130,246,.3);
+    }
+
+    .back-to-top:hover { color: white; transform: translateY(-3px); }
+
+    @media (max-width: 991.98px) {
+      .navbar-collapse { padding-top: 15px; }
+      .hero-section { padding-top: 85px; }
+      .hero-visual { min-height: 390px; }
+      .float-card-one { left: 7%; }
+      .float-card-two { right: 7%; }
+      .contact-panel { padding: 40px; }
+    }
+
+    @media (max-width: 575.98px) {
+      .section-padding { padding: 70px 0; }
+      .hero-title { font-size: clamp(3.1rem, 15vw, 4.5rem); }
+      .hero-visual { min-height: 320px; }
+      .visual-core { width: 160px; height: 160px; }
+      .core-symbol { font-size: 58px; }
+      .orbit-one { width: 270px; height: 200px; }
+      .orbit-two { width: 220px; height: 280px; }
+      .floating-card { padding: 9px 10px; }
+      .floating-card b { font-size: 9px; }
+      .floating-card small { font-size: 8px; }
+      .contact-panel { padding: 30px 23px; }
+      .contact-panel h2 { font-size: 2.5rem; }
+      .about-visual { min-height: 320px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top site-navbar" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand brand-mark" href="#home">
+        <span>clon<span class="brand-dot">.</span><small>BUILT FOR WHAT'S NEXT</small></span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-2">
+            <a
+                class="btn btn-primary btn-sm px-3"
+                href="https://wa.me/2348160460663?text=Hello%2C%20I%27d%20like%20to%20make%20an%20enquiry."
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Make an enquiry on WhatsApp"
+            >
+                <i class="fab fa-whatsapp me-2"></i>
+                Let's Talk
+            </a>
+
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Home / Hero -->
+    <section id="home" class="hero-section section-anchor">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="container position-relative">
+        <div class="row align-items-center min-vh-100 py-5">
+          <div class="col-lg-7 py-5">
+            <div class="eyebrow wow animate__animated animate__fadeInUp">✦ YOUR PARTNER IN DIGITAL PROGRESS</div>
+
+            <h1 class="hero-title wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
+              Built for<br>
+              <span class="text-gradient">What's Next.</span>
+            </h1>
+
+            <p class="hero-copy wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
+              We turn ideas into practical digital clon. From custom software and technology support to student project guidance, we're here to help you move forward.
+            </p>
+
+            <div class="d-flex flex-wrap gap-3 mt-4 wow animate__animated animate__fadeInUp" data-wow-delay=".3s">
+   
+                <a href="#services" class="btn btn-primary btn-lg px-4 py-3">
+                    Explore our services
+                    <i class="far fa-circle-down ms-2"></i>
+                </a>
+   
+              <a href="https://wa.me/2348160460663?text=Hello%20clon%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-lg px-4 py-3">Chat on WhatsApp</a>
+            </div>
+
+            <div class="hero-proof wow animate__animated animate__fadeInUp" data-wow-delay=".4s">
+              <div><strong>Smart</strong><span>Problem-solving</span></div>
+              <div><strong>Practical</strong><span>Digital clon</span></div>
+              <div><strong>Future-ready</strong><span>Built around you</span></div>
+            </div>
+          </div>
+
+          <div class="col-lg-5 mt-3 mt-lg-0">
+            <div class="hero-visual wow animate__animated animate__zoomIn" data-wow-delay=".2s">
+              <div class="visual-orbit orbit-one"></div>
+              <div class="visual-orbit orbit-two"></div>
+
+              <div class="visual-core">
+                <div class="core-symbol">c<span>.</span></div>
+                <p>IDEAS INTO<br><strong>IMPACT</strong></p>
+              </div>
+
+              <div class="floating-card float-card-one">
+                <span class="mini-icon">&lt;/&gt;</span>
+                <span><b>Software</b><small>Built with purpose</small></span>
+              </div>
+
+              <div class="floating-card float-card-two">
+                <span class="mini-icon">✦</span>
+                <span><b>Technology</b><small>Made practical</small></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section-padding section-anchor bg-light-soft">
+      <div class="container">
+        <div class="section-heading text-center mx-auto wow animate__animated animate__fadeInUp">
+          <span class="section-kicker">WHAT WE DO</span>
+          <h2>Ideas are just the beginning.<br><span class="text-gradient">Let's build something.</span></h2>
+          <p>Our services bring technology, creativity, and practical thinking together to help you achieve your goals.</p>
+        </div>
+
+        <div class="row g-4 mt-3">
+          <!-- Service 1 -->
+          <div class="col-md-6 col-lg-4 wow animate__animated animate__fadeInUp" data-wow-delay=".05s">
+            <article class="service-card">
+              <div class="service-icon icon-blue">&lt;/&gt;</div>
+              <span class="service-number">01 / DEVELOPMENT</span>
+              <h3>Software Development</h3>
+              <p>Custom websites and web-based systems designed to solve real problems, simplify processes, and help businesses work smarter.</p>
+              <ul class="service-list">
+                <li>Business websites</li>
+                <li>Web applications and dashboards</li>
+                <li>Database-driven systems</li>
+              </ul>
+              <div class="service-card-footer">
+    <a href="pages/software-development.html" class="btn btn-primary">
+        View Service <i class="fas fa-arrow-right"></i>
+    </a>
+
+    <a
+        class="btn btn-success whatsapp-icon"
+        href="https://wa.me/2348160460663?text=Hello%2C%20I%27m%20interested%20in%20Software%20Development."
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Ask about software development on WhatsApp"
+        title="Chat on WhatsApp"
+    >
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</div>
+            </article>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="col-md-6 col-lg-4 wow animate__animated animate__fadeInUp" data-wow-delay=".15s">
+            <article class="service-card">
+              <div class="service-icon icon-violet">✳</div>
+              <span class="service-number">02 / TECHNOLOGY</span>
+              <h3>Technology Solutions</h3>
+              <p>Practical technology support that helps individuals and organizations use digital tools more effectively and confidently.</p>
+              <ul class="service-list">
+                <li>IT consultation and support</li>
+                <li>Digital process improvement</li>
+                <li>Technical setup and guidance</li>
+              </ul>
+              <div class="service-card-footer">
+                    <a href="pages/technology-clon.html" class="btn btn-primary">
+                        View Service <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                    <a
+                        class="btn btn-success whatsapp-icon"
+                        href="https://wa.me/2348160460663?text=Hello%2C%20I%27m%20interested%20in%20Technology%20Solutions."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Ask about technology solutions on WhatsApp"
+                        title="Chat on WhatsApp"
+                    >
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </article>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="col-md-6 col-lg-4 mx-md-auto wow animate__animated animate__fadeInUp" data-wow-delay=".25s">
+            <article class="service-card">
+              <div class="service-icon icon-orange">✎</div>
+              <span class="service-number">03 / STUDENT SUPPORT</span>
+              <h3>Student Project Support</h3>
+              <p>Structured guidance for students working on academic and final-year projects, from planning and documentation to implementation support.</p>
+              <ul class="service-list">
+                <li>Project planning and guidance</li>
+                <li>Documentation and presentation support</li>
+                <li>System design and implementation guidance</li>
+              </ul>
+              <div class="service-card-footer">
+                <a href="pages/project-support.html" class="btn btn-primary">
+                    View Service <i class="fas fa-arrow-right"></i>
+                </a>
+
+                <a
+                    class="btn btn-success whatsapp-icon"
+                    href="https://wa.me/2348160460663?text=Hello%2C%20I%27m%20interested%20in%20Student%20Project%20Support."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Ask about student project support on WhatsApp"
+                    title="Chat on WhatsApp"
+                >
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="text-center mt-5 wow animate__animated animate__fadeInUp">
+        <a
+            href="https://wa.me/2348160460663?text=Hello%2C%20I%27d%20like%20help%20choosing%20a%20service."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-dark-custom"
+            >
+                <i class="fab fa-whatsapp me-2"></i>
+                Not sure what you need? Let's talk
+                <!-- <i class="fas fa-arrow-up-right-from-square ms-2"></i> -->
+            </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="section-padding section-anchor">
+      <div class="container">
+        <div class="row align-items-end mb-4">
+          <div class="col-lg-8 wow animate__animated animate__fadeInUp">
+            <span class="section-kicker">SELECTED WORK</span>
+            <h2 class="section-title">Thoughtful work.<br><span class="text-gradient">Useful outcomes.</span></h2>
+          </div>
+          <div class="col-lg-4 wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
+            <p class="section-intro">Every project starts with a challenge. We focus on clear thinking and useful clon that fit the people who use them.</p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 wow animate__animated animate__fadeInUp">
+            <article class="portfolio-card">
+              <img src="assets/images/bussiness.jpg" alt="">
+              <div class="portfolio-info">
+                <span>WEB APPLICATION</span>
+                <h3>Business Management Systems</h3>
+                <p>Organized digital workflows, useful dashboards, and structured data management.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 wow animate__animated animate__fadeInUp" data-wow-delay=".15s">
+            <article class="portfolio-card">
+              <img src="assets/images/project.jpg" alt="">
+              <div class="portfolio-info">
+                <span>PROJECT SUPPORT</span>
+                <h3>Academic Project Guidance</h3>
+                <p>Clear project structure, implementation guidance, and presentation preparation.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <p class="portfolio-note mt-3">✦ These are illustrative project categories. Replace them with real completed projects and screenshots as your portfolio grows.</p>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section-padding section-anchor bg-light-soft">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 wow animate__animated animate__fadeInLeft">
+            <div class="about-visual">
+              <img src="assets/images/practical.jpg" alt="">
+              <div class="about-sticker sticker-top"><span>✦</span> Think clearly.</div>
+              <div class="about-sticker sticker-bottom"><span>↗</span> Build purposefully.</div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 wow animate__animated animate__fadeInRight">
+            <span class="section-kicker">A LITTLE ABOUT US</span>
+            <h2 class="section-title">Technology should make life <span class="text-gradient">work better.</span></h2>
+            <p class="section-intro">At clon, we believe good technology starts with understanding the problem. We combine practical thinking with digital skills to create work that is useful, accessible, and ready for what comes next.</p>
+            <p class="body-muted">Whether you're a business looking for a custom system, an individual who needs technical guidance, or a student developing a project, we aim to make the process clearer from the first conversation to the final result.</p>
+
+            <div class="row g-3 mt-3">
+              <div class="col-sm-6">
+                <div class="value-item"><span>01</span><div><strong>Purpose first</strong><small>Understand the need before building.</small></div></div>
+              </div>
+              <div class="col-sm-6">
+                <div class="value-item"><span>02</span><div><strong>Keep it practical</strong><small>Focus on clon that work.</small></div></div>
+              </div>
+              <div class="col-sm-6">
+                <div class="value-item"><span>03</span><div><strong>Clear communication</strong><small>Know what's happening at each step.</small></div></div>
+              </div>
+              <div class="col-sm-6">
+                <div class="value-item"><span>04</span><div><strong>Keep improving</strong><small>Build with the future in mind.</small></div></div>
+              </div>
+            </div>
+
+
+<a
+    href="https://wa.me/2348160460663?text=Hello%2C%20I%27d%20like%20to%20know%20more%20about%20your%20work."
+    target="_blank"
+    rel="noopener noreferrer"
+    class="btn btn-primary mt-4 px-4 py-3"
+>
+    Get to know us
+    <i class="fas fa-circle-arrow-right ms-2"></i>
+</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section-padding section-anchor contact-section">
+      <div class="container">
+        <div class="contact-panel wow animate__animated animate__fadeInUp">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <span class="section-kicker kicker-light">HAVE SOMETHING IN MIND?</span>
+              <h2>Let's turn your next idea<br>into <span>something real.</span></h2>
+              <p>Tell us what you're working on. We'll talk through your needs and explore the next steps together.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                <a
+                    class="btn btn-light btn-lg contact-button"
+                    href="https://wa.me/2348160460663?text=Hello%2C%20I%27d%20like%20to%20discuss%20a%20project."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Discuss a project with us on WhatsApp"
+                >
+                    <i class="fab fa-whatsapp me-2"></i>
+                    Chat on WhatsApp
+                </a>
+                <p class="mt-3 mb-0">Quickest way to reach us</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row align-items-center gy-3">
+        <div class="col-md-5">
+          <a class="footer-brand" href="#home">clon<span>.</span></a>
+          <p class="footer-tagline mb-0">Built for What's Next.</p>
+        </div>
+
+        <div class="col-md-4">
+          <div class="footer-links">
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+
+        <div class="col-md-3 text-md-end">
+          <a href="https://wa.me/2348160460663?text=Hello%20clon." target="_blank" rel="noopener noreferrer" class="footer-whatsapp">WhatsApp us ↗</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom d-flex flex-column flex-sm-row justify-content-between gap-2 mt-4 pt-3">
+        <span>© <span id="currentYear"></span> clon. All rights reserved.</span>
+        <span>Designed with purpose. Built for what's next.</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#home" class="back-to-top" aria-label="Back to top">↑</a>
+
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- WOW.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+  <script>
+    // Initialize WOW.js, unless the visitor prefers reduced motion.
+    if (window.WOW &&
+        !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      new WOW({
+        boxClass: 'wow',
+        animateClass: 'animate__animated',
+        offset: 60,
+        mobile: true,
+        live: false
+      }).init();
+    }
+
+    // Close the mobile menu after clicking a navigation link.
+    document.querySelectorAll('#mainNavbar .nav-link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        var menu = document.getElementById('mainNavbar');
+
+        if (menu.classList.contains('show')) {
+          bootstrap.Collapse.getOrCreateInstance(menu).hide();
+        }
+      });
+    });
+
+    // Highlight the navigation link for the section currently in view.
+    var sections = document.querySelectorAll('main section[id]');
+    var navLinks = document.querySelectorAll('.navbar .nav-link[href^="#"]');
+
+    if ('IntersectionObserver' in window) {
+      var sectionObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            navLinks.forEach(function(link) {
+              link.classList.toggle(
+                'active',
+                link.getAttribute('href') === '#' + entry.target.id
+              );
+            });
+          }
+        });
+      }, {
+        rootMargin: '-35% 0px -55% 0px'
+      });
+
+      sections.forEach(function(section) {
+        sectionObserver.observe(section);
+      });
+    }
+
+    // Update the copyright year automatically.
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
